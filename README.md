@@ -1,2 +1,7 @@
 # cs5800_final
-pip install -r requirements.txt
+
+## Installation
+pip3 install -r requirements.txt
+
+## Development
+python3 main.py
