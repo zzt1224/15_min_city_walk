@@ -12,9 +12,9 @@ trip_time = 15  # in minutes
 travel_speed = 4.5  # walking speed in km/hour
 meters_per_minute = travel_speed * 1000 / 60
 cols = ["name", "amenity"]
-point_of_interest={"Building": True}
+point_of_interest={"building": True}
 # https://osmnx.readthedocs.io/en/stable/user-reference.html#module-osmnx.features
-point_of_interest = {"amenity":True, "landuse":["retail","commercial"], "highway":"bus_stop"}
+# point_of_interest = {"amenity":True, "landuse":["retail","commercial"], "highway":"bus_stop"}
 
 
 def main():
@@ -39,20 +39,17 @@ def main():
             distance = ox.distance.euclidean_dist_vec(Graph.nodes[nearest]['y'], Graph.nodes[nearest]['x'], geometry.centroid.y, geometry.centroid.x)
         return distance
     
-
     # filter features that are too far from the sub graph
     filtered_features = features[features['geometry'].apply(get_distance_from_nearest_node) < 0.0005]
 
     # https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.explore.html#geopandas-geodataframe-explore
-    m = filtered_features.explore(tooltip=cols, cmap = "inferno_r")
+    m = filtered_features.explore(tooltip=cols, tiles = "CartoDB positron", cmap = "inferno_r")
 
     edges = ox.graph_to_gdfs(subgraph, nodes=False)
 
     edges_map = edges.explore(m=m, column = "length", popup = True, tiles = "CartoDB positron", cmap = "inferno_r")
-                                        
-    output_file_path = "index.html"
 
-    edges_map.save(output_file_path)
+    edges_map.save("index.html")
 
 
 if __name__ == "__main__":
