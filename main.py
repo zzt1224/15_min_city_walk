@@ -47,7 +47,12 @@ def main():
 
     edges = ox.graph_to_gdfs(subgraph, nodes=False)
 
-    edges_map = edges.explore(m=m, column = "length", popup = True, tiles = "CartoDB positron", cmap = "inferno_r")
+    # remove 'm=m' for graph only
+    edges_map = edges.explore(m=m, 
+                              column = "length", 
+                              popup = True, 
+                              tiles = "CartoDB positron", 
+                              cmap = "inferno_r")
 
     edges_map.save("index.html")
 
