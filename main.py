@@ -12,9 +12,9 @@ trip_time = 15  # in minutes
 travel_speed = 4.5  # walking speed in km/hour
 meters_per_minute = travel_speed * 1000 / 60
 cols = ["name", "amenity"]
-point_of_interest={"building": True}
+# point_of_interest={"building": True}
 # https://osmnx.readthedocs.io/en/stable/user-reference.html#module-osmnx.features
-# point_of_interest = {"amenity":True, "landuse":["retail","commercial"], "highway":"bus_stop"}
+point_of_interest = {"amenity":True, "landuse":["retail","commercial"], "highway":"bus_stop"}
 
 
 def main():
