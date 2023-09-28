@@ -1,4 +1,7 @@
-# cs5800_final
+# Isochreones Map
+
+<img width="757" alt="Screenshot 2023-09-28 at 14 00 05" src="https://github.com/zzt1224/cs5800_final/assets/12127836/135bef3f-7c13-4a4b-8010-15a4ce02ab90">
+
 
 ## Installation
 pip3 install -r requirements.txt
@@ -6,8 +9,6 @@ pip3 install -r requirements.txt
 ## Development
 python3 main.py
 
-## Report 
-https://docs.google.com/document/d/1z3DjPBfdg-ysKfWbAqojfboaa838vd6UtwJ_4sxPe5s/edit
 
 ## Reference
 1. https://medium.com/@cheng.cesar/15-min-city-8c00dbe279fc
